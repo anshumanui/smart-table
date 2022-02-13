@@ -1,0 +1,45 @@
+
+@import '_settings';
+
+main {
+	@include utils-main;
+	@include utils-container;
+	@include utils-table;
+	@include utils-input;
+	@include error-container;
+	@include loading-container;
+	@include confirmation-modal;
+	@include button;
+	@include pagination;
+
+	section {
+		&.st-intro {
+			text-align: center;
+		}
+
+		&.st-searchAndCount {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&.st-table {
+			table {
+				thead {
+					tr {
+						th {
+							input[type=search] {
+								min-width: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.st-search {
+			input[type=search] {
+				min-width: 250px;
+			}
+		}
+	}
+}

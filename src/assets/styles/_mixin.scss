@@ -1,0 +1,193 @@
+
+@import '_global';
+
+$browsers: -webkit-,-moz-,-o-,-ms-;
+
+@mixin animation {
+	@each $br in $browsers {
+		#{$br}transition: all 0.3s ease-in-out 0s;
+	}
+}
+
+@mixin utils-main {
+	font-family: 'Source Sans Pro', sans-serif;
+	color: $darker-grey;
+	font-size: 1rem;
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $darkest-grey;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		font-size: 2rem;
+	}
+
+	p {
+		word-spacing: 1px;
+	}
+}
+
+@mixin utils-container {
+	.st-container {
+    	max-width: 1200px;
+    	margin: 0 auto;
+    }
+}
+
+@mixin utils-table {
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		
+		thead {
+			tr {
+				th {
+					padding: 10px;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				td {
+					padding: 10px;
+					border-bottom: 1px solid $light-grey;
+				}
+			}
+		}
+	}
+}
+
+@mixin utils-input {
+	input[type=search], input[type=text], textarea {
+		padding: 6px 10px;
+		border-radius: 3px;
+		border: 1px solid $grey;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 1rem;
+		color: $darker-grey;
+
+		&::placeholder {
+			color: $dark-grey;
+		}
+	}
+
+	input[type=checkbox] {
+		width: 20px;
+		height: 20px;
+		background-color: transparent;
+		border: 1px solid $grey;
+		border-radius: 0;
+
+		& + label {
+			margin-left: 5px;
+		}
+	}
+
+	textarea {
+		height: auto;
+		min-width: 500px;
+		width: 90%;
+	}
+}
+
+@mixin error-container {
+	.st-errorContainer {
+		text-align: center;
+		color: $grey;
+	}
+}
+
+@mixin loading-container {
+	.st-loadingContainer {
+		text-align: center;
+		color: $grey;
+	}
+}
+
+@mixin button {
+	.st-btn {
+		border-radius: 3px;
+		padding: 10px 15px;
+		border: 0;
+		text-transform: uppercase;
+		color: $darker-grey;
+	}
+
+	.st-primaryBtn {
+		color: $lightest-grey;
+	}
+}
+
+@mixin confirmation-modal {
+	.st-confirmationModal {
+		position: fixed;
+		background: unquote($black + '90');
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.st-confirmationModalBox {
+			width: 500px;
+			padding: 15px;
+			background-color: $white;
+			border-radius: 5px;
+
+			.st-confirmationModalBody {
+				padding: 20px 0;
+			}
+
+			.st-confirmationModalFooter {
+				border-top: 1px solid $grey;
+				padding-top: 20px;
+			}
+		}
+	}
+}
+
+@mixin pagination {
+	.st-pagination {
+		ul {
+			display: flex;
+			justify-content: center;
+
+			li {
+				width: auto;
+				margin: 0 5px;
+				list-style-type: none;
+				background: $darkest-grey;
+				min-width: 30px;
+				height: 25px;
+				width: auto;
+				color: $white;
+				padding: 5px;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+
+				&.st-paginationActive {
+					background: $dark-grey;
+				}
+
+				&.st-paginationDisabled {
+					background: $light-grey;
+				}
+
+				&.st-paginationGap {
+					background: transparent;
+					color: $darkest-grey;
+				}
+
+				&:first-child, &:last-child  {
+					padding: 5px 15px;
+				}
+			}
+		}
+	}
+}

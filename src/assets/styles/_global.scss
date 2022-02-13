@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+
+//	Color styles declared here
+$black: #000000;
+$darkest-grey: #333;
+$darker-grey: #666;
+$dark-grey: #999;
+$grey: #CCC;
+$light-grey: #DDD;
+$lighter-grey: #EEE;
+$lightest-grey: #F7F7F7;
+$white: #FFF;
+
+$darkblue: #192a56;
+$seagreen: #1abc9c;
+$orange: #fd9644;
+$purple: #706fd3;
+$blue: #1B9CFC;
+$peach: #FD7272;
+$green: #A3CB38;
+$yellow: #FFC312;
+$royalblue: #3867d6;
+
+$colors: ("darkblue": $darkblue, "seagreen": $seagreen, "orange": $orange, "purple": $purple, "blue": $blue, "peach": $peach, "green": $green, "yellow": $yellow, "royalblue": $royalblue);
+
+@each $name, $color in $colors {
+	.st-theme-#{$name} {
+		table {
+			thead {
+				tr {
+					&:nth-child(1) {
+						th {
+							color: $color;
+							border-bottom: 2px solid $color;
+						}
+					}
+
+					&:nth-child(2) {
+						th {
+							background-color: $lightest-grey;
+						}
+					}
+				}
+			}
+		}
+
+		.st-primaryBtn {
+			background-color: $color;
+		}
+
+		input[type=checkbox] {
+			&:checked {
+			}
+		}
+	}
+
+	.st-#{$name} {
+		background-color: $color;
+	}
+}
